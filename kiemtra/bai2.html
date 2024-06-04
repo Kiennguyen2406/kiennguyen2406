@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    // Câu 2: Viết hàm có tham số truyền vào là một chuỗi các ký tự.Hàm thực hiện đếm số lượng
+    // ký tự in hoa trong chuỗi.
+    // - Nếu chuỗi có ký tự in hoa hàm trả về số lượng ký tự in hoa có trong chuỗi.
+    // - Nếu Chuỗi không chứa các ký tự hoa thì hàm sẽ trả về thông báo "The Strings is not
+    // contain upper char"
+
+    function demKyTuInHoa(chuoi) {
+        let dem = 0;
+        for (let i = 0; i < chuoi.length; i++) {
+            if (chuoi[i] >= 'A' && chuoi[i] <= 'Z') {
+                dem++;
+            }
+        }
+        if (dem > 0) {
+            return dem;
+        } else {
+            return "The String does not contain any uppercase character";
+        }
+    }
+    let chuoi1 = "KienNguyen";
+    let chuoi2 = "codegym";
+    console.log(demKyTuInHoa(chuoi1)); // Output: 2
+    console.log(demKyTuInHoa(chuoi2));
+
+</script>
+</body>
+</html>

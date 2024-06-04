@@ -5,6 +5,28 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    // bai1 : Nhập từ bàn phím mảng số nguyên gồm n phần tử (n<=20).
+    // Hiển thị ra màn hình danh sách các phần tử của mảng, hiệu của Tổng các số chẵn và Tổng các số lẻ có trong mảng.
+    //     Ví dụ: [1,2,3,4,5,6]. Kết quả sau khi thực hiện là: (2+4+6)-(1+3+5) = 3
 
+    let n = parseInt(prompt("Nhập số phần tử của mảng (n <= 20):"));
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let phanTu = parseInt(prompt("Nhập phần tử thứ " + (i + 1) + ":"));
+        arr.push(phanTu);
+    }
+    let sumChan = 0;
+    let sumLe = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            sumChan += arr[i];
+        } else {
+            sumLe += arr[i];
+        }
+    }
+    let hieu = sumChan - sumLe;
+    document.write("Hiệu của tổng các số chẵn và tổng các số lẻ là: " + hieu);
+</script>
 </body>
 </html>
