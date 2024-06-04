@@ -5,6 +5,89 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    class DienThoai {
+        constructor(maDienThoai, ten, hangSanXuat, gia) {
+            this.maDienThoai = maDienThoai;
+            this.ten = ten;
+            this.hangSanXuat = hangSanXuat;
+            this.gia = gia;
+        }
 
+        // Getter và setter
+        get MaDienThoai() {
+            return this.maDienThoai;
+        }
+
+        set MaDienThoai(value) {
+            this.maDienThoai = value;
+        }
+
+        get Ten() {
+            return this.ten;
+        }
+
+        set Ten(value) {
+            this.ten = value;
+        }
+
+        get HangSanXuat() {
+            return this.hangSanXuat;
+        }
+
+        set HangSanXuat(value) {
+            this.hangSanXuat = value;
+        }
+
+        get Gia() {
+            return this.gia;
+        }
+
+        set Gia(value) {
+            this.gia = value;
+        }
+
+        // Phương thức toString
+        toString() {
+            return `Mã điện thoại: ${this.maDienThoai}, Tên: ${this.ten}, Hãng sản xuất: ${this.hangSanXuat}, Giá: ${this.gia}`;
+        }
+    }
+
+    // Chương trình quản lý điện thoại
+    class QuanLyDienThoai {
+        constructor() {
+            this.danhSachDienThoai = [];
+        }
+
+        // Thêm mới điện thoại
+        themDienThoai(dienThoai) {
+            this.danhSachDienThoai.push(dienThoai);
+        }
+
+        // Hiển thị danh sách điện thoại được sắp xếp theo tên điện thoại
+        hienThiDanhSach() {
+            let danhSachSapXep = this.danhSachDienThoai.sort((a, b) => a.Ten.localeCompare(b.Ten));
+            danhSachSapXep.forEach(dt => {
+                console.log(dt.toString());
+            });
+        }
+    }
+
+    // Sử dụng chương trình quản lý điện thoại
+    let quanLyDT = new QuanLyDienThoai();
+
+    // Thêm mới điện thoại
+    let dt1 = new DienThoai("DT001", "iPhone 12", "Apple", 25000000);
+    let dt2 = new DienThoai("DT002", "Galaxy S21", "Samsung", 20000000);
+    let dt3 = new DienThoai("DT003", "Pixel 5", "Google", 15000000);
+
+    quanLyDT.themDienThoai(dt1);
+    quanLyDT.themDienThoai(dt2);
+    quanLyDT.themDienThoai(dt3);
+
+    // Hiển thị danh sách điện thoại
+    console.log("Danh sách điện thoại sau khi thêm mới:");
+    quanLyDT.hienThiDanhSach();
+</script>
 </body>
 </html>
