@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Câu 3: Viết hàm tìm các số nguyên tố với tham số truyền vào là mảng chứa các số nguyên.
+    //     Hiển thị mảng được trả về từ hàm ( Yêu cầu sắp xếp tăng dần).
+    function isPrime(num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function findAndSortPrimes(array) {
+        let newarr = [];
+        for (let i = 0; i < array.length; i++) {
+            if (isPrime(array[i])) {
+                newarr.push(array[i]);
+            }
+        }
+        newarr.sort((a, b) => a - b);
+        return newarr;
+    }
+
+    const inputArray = [29, 15, 12, 41, 19, 13, 37];
+    const primeArray = findAndSortPrimes(inputArray);
+    console.log(primeArray);
+</script>
+</body>
+</html>
