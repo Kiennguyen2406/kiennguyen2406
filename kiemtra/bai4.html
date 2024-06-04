@@ -68,7 +68,7 @@
         hienThiDanhSach() {
             let danhSachSapXep = this.danhSachDienThoai.sort((a, b) => a.Ten.localeCompare(b.Ten));
             danhSachSapXep.forEach(dt => {
-                console.log(dt.toString());
+                document.write(dt.toString() + "<br>");
             });
         }
     }
@@ -86,7 +86,7 @@
     quanLyDT.themDienThoai(dt3);
 
     // Hiển thị danh sách điện thoại
-    console.log("Danh sách điện thoại sau khi thêm mới:");
+    document.write("<p>Danh sách điện thoại sau khi thêm mới:</p>");
     quanLyDT.hienThiDanhSach();
 </script>
 </body>
